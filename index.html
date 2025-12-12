@@ -9,14 +9,40 @@
 <body>
   <main class="app">
     <header class="app__header">
-      <h1 class="app__title">To-Do</h1>
-      <p class="app__subtitle">Organise tes tâches en un clin d'œil.</p>
+      <div>
+        <h1 class="app__title">To-Do</h1>
+        <p class="app__subtitle">Organise tes tâches en un clin d'œil.</p>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Changer de thème">
+        Toggle
+      </button>
     </header>
 
     <section class="input">
       <label class="sr-only" for="task-input">Nouvelle tâche</label>
+      <label class="sr-only" for="task-priority">Priorité</label>
+      <select id="task-priority" name="priority">
+        <option value="low">Faible</option>
+        <option value="normal" selected>Normale</option>
+        <option value="high">Haute</option>
+      </select>
       <input id="task-input" type="text" name="task" placeholder="Ajouter une tâche..." autocomplete="off">
       <button id="add-btn" type="button">Ajouter</button>
+    </section>
+
+    <section class="filters" aria-label="Filtres des tâches">
+      <button class="filter is-active" data-filter="all" type="button">Toutes</button>
+      <button class="filter" data-filter="active" type="button">Actives</button>
+      <button class="filter" data-filter="completed" type="button">Terminées</button>
+    </section>
+
+    <section class="actions" aria-label="Actions sur les tâches">
+      <div class="actions__group">
+        <button id="export-btn" type="button">Exporter JSON</button>
+        <label class="actions__upload" for="import-input">Importer JSON</label>
+        <input id="import-input" type="file" accept="application/json" hidden>
+      </div>
+      <button id="reload-btn" type="button" class="ghost">Recharger</button>
     </section>
 
     <section class="list">
