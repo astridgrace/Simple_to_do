@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">To-Do</h1>
+      <p class="app__subtitle">Organise tes tâches en un clin d'œil.</p>
+    </header>
+
+    <section class="input">
+      <label class="sr-only" for="task-input">Nouvelle tâche</label>
+      <input id="task-input" type="text" name="task" placeholder="Ajouter une tâche..." autocomplete="off">
+      <button id="add-btn" type="button">Ajouter</button>
+    </section>
+
+    <section class="list">
+      <h2 class="sr-only">Liste des tâches</h2>
+      <ul id="task-list" class="task-list">
+        <!-- Les tâches seront injectées ici via JavaScript -->
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
